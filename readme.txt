@@ -1,4 +1,0 @@
-
-= KAFKA test container =
-
-== docker 
