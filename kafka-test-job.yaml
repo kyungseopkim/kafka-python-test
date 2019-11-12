@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-test
+spec:
+  template:
+    spec:
+      containers:
+      - name: kafka-test
+        image: 411026478373.dkr.ecr.us-east-1.amazonaws.com/kafka-test:1.1
+        imagePullPolicy: "Always"
+        command: ["python", "/test_kafka.py"]
+      restartPolicy: Never
+  backoffLimit: 4
